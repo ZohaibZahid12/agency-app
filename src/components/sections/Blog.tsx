@@ -1,0 +1,62 @@
+import { ArrowRight, ArrowUpRight, Calendar, Clock } from "lucide-react";
+import { blogPosts } from "@/lib/data";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
+
+export function Blog() {
+  return (
+    <section id="blog" className="bg-ink-50/60 py-24 sm:py-32">
+      <Container>
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <SectionHeading
+            eyebrow="From the blog"
+            title="Expert tips on building better products"
+            align="left"
+            className="mx-0 text-left"
+          />
+          <Button href="#contact" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
+            View all articles
+          </Button>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {blogPosts.map((post, i) => (
+            <Reveal key={post.title} delay={i * 0.1}>
+              <article className="group flex h-full cursor-pointer flex-col rounded-xl border border-ink-100 bg-white p-1.5 transition-colors duration-300 hover:border-brand-300">
+                <div className="relative flex h-36 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-ink-100 to-ink-50">
+                  <span className="text-5xl font-black text-ink-200 font-display">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <ArrowUpRight className="absolute right-4 top-4 h-5 w-5 text-ink-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-600" />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <span className="w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                    {post.category}
+                  </span>
+                  <h3 className="mt-4 text-base font-bold leading-snug text-ink-950 transition-colors group-hover:text-brand-700">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-500">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-5 flex items-center gap-4 border-t border-ink-100 pt-4 text-xs text-ink-400">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {post.date}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
