@@ -12,7 +12,7 @@ export function Blog() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
             eyebrow="From the blog"
-            title="Expert tips on building better products"
+            title="Notes From the Build."
             align="left"
             className="mx-0 text-left"
           />
@@ -24,8 +24,8 @@ export function Blog() {
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {blogPosts.map((post, i) => (
             <Reveal key={post.title} delay={i * 0.1}>
-              <article className="group flex h-full cursor-pointer flex-col rounded-xl border border-ink-100 bg-white p-1.5 transition-colors duration-300 hover:border-brand-300">
-                <div className="relative flex h-36 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-ink-100 to-ink-50">
+              <article className="group flex h-full cursor-pointer flex-col rounded-3xl border border-ink-100 bg-white p-1.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="relative flex h-36 items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-brand-50 to-white">
                   <span className="text-5xl font-black text-ink-200 font-display">
                     {String(i + 1).padStart(2, "0")}
                   </span>

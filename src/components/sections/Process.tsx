@@ -9,7 +9,7 @@ export function Process() {
       <Container>
         <SectionHeading
           eyebrow="How it works"
-          title="Simple process, powerful results"
+          title="From Idea to Launch."
           description="No jargon, no black boxes. Here's exactly what happens when you work with us."
         />
 
@@ -26,7 +26,7 @@ export function Process() {
                   <div className="relative flex flex-col items-start">
                     <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-ink-950 shadow-card ring-1 ring-ink-100">
                       <Icon className="h-6 w-6 text-brand-600" strokeWidth={1.75} />
-                      <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent-500 text-[0.65rem] font-bold text-white">
+                      <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-[#773CDD] text-[0.65rem] font-bold text-white">
                         {step.number}
                       </span>
                     </div>

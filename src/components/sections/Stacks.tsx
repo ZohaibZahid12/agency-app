@@ -1,16 +1,16 @@
-import { trustedLogos } from "@/lib/data";
+import { techStack } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function TrustedBy() {
-  const loop = [...trustedLogos, ...trustedLogos];
+export function Stacks() {
+  const loop = [...techStack, ...techStack];
 
   return (
-    <section className="border-y border-ink-100 bg-ink-50/60 py-10">
+    <section className="border-y border-ink-100 bg-ink-50/50 py-10">
       <Container>
         <Reveal>
           <p className="text-center text-sm font-medium text-ink-400">
-            Trusted by product teams at
+            Built with the tools engineering teams trust
           </p>
         </Reveal>
       </Container>
@@ -23,7 +23,7 @@ export function TrustedBy() {
             {loop.map((name, i) => (
               <span
                 key={i}
-                className="shrink-0 font-display text-xl font-semibold tracking-tight text-ink-300 transition-colors duration-300 hover:text-ink-600"
+                className="shrink-0 font-display text-xl font-semibold tracking-tight text-ink-300 transition-colors duration-300 hover:text-brand-600"
               >
                 {name}
               </span>

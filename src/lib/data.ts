@@ -115,15 +115,17 @@ export const industries: Industry[] = [
   { title: "Logistics & Supply Chain", description: "Real-time visibility across fleets, routes, and warehouses.", icon: Truck },
 ];
 
-export const trustedLogos = [
-  "PayLoop",
-  "Fleetwise",
-  "Ledgerly",
-  "Northstar Health",
-  "Wavecart",
-  "Brightloop",
-  "Vantage Robotics",
-  "Harborline",
+export const techStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "Tailwind CSS",
+  "PostgreSQL",
+  "AWS",
+  "Docker",
+  "Python",
+  "Framer Motion",
 ];
 
 export const comparisonRows = [

@@ -11,11 +11,11 @@ type Size = "sm" | "md" | "lg";
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-accent-500 text-white shadow-soft hover:bg-accent-600 hover:shadow-card active:bg-accent-700",
+    "bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-soft hover:brightness-110 hover:shadow-glow active:brightness-95",
   secondary: "bg-ink-950 text-white hover:bg-ink-800 shadow-soft",
   outline:
     "border border-ink-200 text-ink-800 bg-white hover:border-brand-300 hover:bg-brand-50/60",
-  ghost: "text-ink-700 hover:bg-ink-100/80",
+  ghost: "text-ink-700 hover:bg-ink-50",
 };
 
 const sizeClasses: Record<Size, string> = {

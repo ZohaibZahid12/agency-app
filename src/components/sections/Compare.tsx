@@ -10,11 +10,11 @@ export function Compare() {
       <Container>
         <SectionHeading
           eyebrow="Why teams switch"
-          title="Not your typical dev shop"
+          title="Not Your Typical Dev Shop."
           description="We've been hired to fix what other agencies left behind more than once. Here's the difference up front."
         />
 
-        <Reveal className="mx-auto mt-14 max-w-4xl overflow-hidden border border-ink-100 bg-white" delay={0.1}>
+        <Reveal className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-sm" delay={0.1}>
           <div className="grid grid-cols-2">
             <div className="border-b border-r border-ink-100 px-5 py-4 sm:px-8">
               <span className="text-sm font-semibold text-ink-400">Typical dev shop</span>

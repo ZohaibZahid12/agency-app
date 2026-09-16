@@ -1,125 +1,56 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ArrowRight, ArrowDownRight, ArrowUpRight, Star } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-
-const avatarColors = ["bg-brand-500", "bg-accent-500", "bg-growth-500", "bg-ink-700"];
-
-const board = [
-  { label: "Deploys shipped", value: "128", change: "+22%", up: true },
-  { label: "Avg. build time", value: "4m 12s", change: "-18%", up: false },
-  { label: "Platform uptime", value: "99.98%", change: "+0.4%", up: true },
-  { label: "Active users", value: "482K", change: "+31%", up: true },
-];
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden bg-white pb-20 pt-36 sm:pb-28 sm:pt-44"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black_10%,transparent_70%)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[560px] bg-hero-radial" />
+    <section id="home" className="relative overflow-hidden bg-white pb-24 pt-44 sm:pb-32 sm:pt-52">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_65%_55%_at_50%_0%,black_10%,transparent_70%)]"
+      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-32 -top-32 h-[420px] w-[420px] animate-pulse-soft rounded-full bg-brand-400/25 blur-[140px]" />
+        <div className="absolute -right-24 top-10 h-[380px] w-[380px] animate-pulse-soft rounded-full bg-[#773CDD]/20 blur-[140px] [animation-delay:1s]" />
+        <div className="absolute bottom-0 left-1/3 h-[360px] w-[360px] animate-pulse-soft rounded-full bg-brand-300/20 blur-[140px] [animation-delay:2s]" />
+      </div>
 
       <Container className="relative">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-ink-100 bg-white px-4 py-1.5 text-sm font-medium text-ink-600">
-              <span className="flex items-center gap-0.5 text-accent-500">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                ))}
-              </span>
-              Rated 4.9/5 by 60+ product teams
-            </div>
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-display-xl font-bold leading-[1.08] text-ink-950 text-balance">
+            We help ambitious teams{" "}
+            <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-[#773CDD] bg-clip-text text-transparent">
+              build products that scale
+            </span>
+          </h1>
 
-            <h1 className="mt-7 text-display-lg font-bold leading-[1.08] text-ink-950 text-balance">
-              We help ambitious teams{" "}
-              <em className="italic text-brand-600">build products that scale</em>
-            </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-500">
+            From idea to infrastructure — we design, build, and scale web,
+            mobile, and AI-powered products for startups and growing
+            engineering teams.
+          </p>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-500">
-              From idea to infrastructure — we design, build, and scale web,
-              mobile, and AI-powered products for startups and growing
-              engineering teams.
-            </p>
-
-            <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button href="#contact" size="lg" icon={<ArrowRight className="h-4.5 w-4.5" />}>
-                Start a project
-              </Button>
-              <Button href="#case-studies" variant="outline" size="lg" icon={<ArrowUpRight className="h-4 w-4" />}>
-                See our work
-              </Button>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-500">
-              <div className="flex items-center -space-x-2.5">
-                {avatarColors.map((color, i) => (
-                  <span
-                    key={i}
-                    className={`flex h-9 w-9 items-center justify-center rounded-full border-2 border-white text-xs font-semibold text-white ${color}`}
-                  >
-                    {["MC", "JO", "PN", "DB"][i]}
-                  </span>
-                ))}
-              </div>
-              <span className="font-medium text-ink-700">
-                60+ products shipped with our team
-              </span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            <div className="overflow-hidden rounded-2xl border border-ink-900 bg-ink-950">
-              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-                <p className="text-sm font-semibold text-white">This week&rsquo;s delivery board</p>
-                <span className="flex items-center gap-1.5 text-xs font-medium text-growth-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-growth-400" />
-                  Live
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="#contact" className="group relative inline-flex overflow-hidden rounded-full p-[1.5px]">
+              <span
+                aria-hidden
+                className="absolute inset-[-150%] animate-spin bg-[conic-gradient(from_90deg,#1450D2,#773CDD,#1450D2)] [animation-duration:3s]"
+              />
+              <span className="relative z-10 inline-flex items-center gap-2 rounded-full bg-white/90 px-7 py-3.5 backdrop-blur-xl">
+                <span className="bg-gradient-to-r from-brand-600 to-[#773CDD] bg-clip-text text-base font-semibold text-transparent">
+                  Start Your Project
                 </span>
-              </div>
-              <div>
-                {board.map((row) => (
-                  <div
-                    key={row.label}
-                    className="flex items-center justify-between border-b border-white/[0.06] px-6 py-4 last:border-b-0"
-                  >
-                    <span className="text-sm text-white/60">{row.label}</span>
-                    <div className="flex items-center gap-3">
-                      <span className="font-display text-xl font-semibold tabular-nums text-white">
-                        {row.value}
-                      </span>
-                      <span className="flex items-center gap-0.5 text-xs font-semibold text-growth-400">
-                        {row.up ? (
-                          <ArrowUpRight className="h-3.5 w-3.5" />
-                        ) : (
-                          <ArrowDownRight className="h-3.5 w-3.5" />
-                        )}
-                        {row.change}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <ArrowRight className="h-4.5 w-4.5 text-brand-600" />
+              </span>
+            </a>
 
-            <div className="absolute -right-4 -top-5 hidden animate-float rounded-xl border border-ink-100 bg-white px-4 py-3 shadow-card sm:block">
-              <p className="text-xs font-medium text-ink-400">Build passed</p>
-              <p className="text-sm font-semibold text-ink-900">main · 2m ago</p>
-            </div>
-          </motion.div>
+            <a
+              href="#case-studies"
+              className="group inline-flex items-center gap-2 px-5 py-3.5 text-base font-semibold text-ink-700 transition-colors hover:text-brand-600"
+            >
+              See Our Work
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </a>
+          </div>
         </div>
       </Container>
     </section>

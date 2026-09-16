@@ -19,7 +19,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link href="#home" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-800 text-white shadow-glow">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-glow">
                 <Spline className="h-4.5 w-4.5" strokeWidth={2.25} />
               </span>
               <span className="font-display text-[1.05rem] font-bold leading-none tracking-tight text-ink-950">

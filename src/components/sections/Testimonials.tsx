@@ -27,7 +27,7 @@ function TestimonialCard({
   index: number;
 }) {
   return (
-    <div className="flex h-full w-[320px] shrink-0 flex-col rounded-xl border border-ink-100 bg-white p-6 sm:w-[360px]">
+    <div className="flex h-full w-[320px] shrink-0 flex-col rounded-3xl border border-ink-100 bg-white p-6 shadow-sm sm:w-[360px]">
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-0.5 text-accent-500">
           {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -62,7 +62,7 @@ export function Testimonials() {
       <Container>
         <SectionHeading
           eyebrow="Client love"
-          title="Don't just take our word for it"
+          title="Hear It From Them."
           description="Real feedback from the founders and product teams we work with every day."
         />
       </Container>

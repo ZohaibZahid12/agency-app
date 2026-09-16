@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { TrustedBy } from "@/components/sections/TrustedBy";
+import { Stacks } from "@/components/sections/Stacks";
 import { Services } from "@/components/sections/Services";
 import { Stats } from "@/components/sections/Stats";
 import { Industries } from "@/components/sections/Industries";
@@ -19,7 +19,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <TrustedBy />
+        <Stacks />
         <Services />
         <Stats />
         <Industries />

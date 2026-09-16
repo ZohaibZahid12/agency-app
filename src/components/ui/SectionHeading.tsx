@@ -26,7 +26,10 @@ export function SectionHeading({
     >
       {eyebrow ? (
         <div className={cn("flex items-center gap-2.5", align === "center" && "justify-center")}>
-          <span className="h-[3px] w-6 shrink-0 rounded-full bg-accent-500" aria-hidden />
+          <span
+            className="h-[3px] w-6 shrink-0 rounded-full bg-gradient-to-r from-brand-600 to-[#773CDD]"
+            aria-hidden
+          />
           <span
             className={cn(
               "text-sm font-semibold",

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 const accentByIndex = [
   "from-brand-500 to-brand-700",
-  "from-accent-500 to-accent-700",
+  "from-brand-500 to-[#773CDD]",
   "from-growth-500 to-growth-700",
 ];
 
@@ -18,7 +18,7 @@ export function CaseStudies() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
             eyebrow="Case studies"
-            title="See how we help businesses like yours"
+            title="Built. Shipped. Proven."
             align="left"
             className="mx-0 text-left"
           />
@@ -30,7 +30,7 @@ export function CaseStudies() {
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {caseStudies.map((study, i) => (
             <Reveal key={study.title} delay={i * 0.1}>
-              <article className="flex h-full flex-col overflow-hidden rounded-xl border border-ink-100 bg-white">
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl">
                 <div
                   className={`relative flex h-40 items-end bg-gradient-to-br p-6 ${accentByIndex[i % accentByIndex.length]}`}
                 >

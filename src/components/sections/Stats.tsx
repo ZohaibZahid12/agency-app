@@ -12,7 +12,7 @@ export function Stats() {
       <Container className="relative">
         <SectionHeading
           eyebrow="Proven track record"
-          title="Real results for teams like yours"
+          title="Numbers That Prove It."
           description="These aren't vanity metrics. They're the same numbers we send our clients every month."
           light
         />
@@ -20,7 +20,8 @@ export function Stats() {
         <div className="mt-14 grid grid-cols-2 gap-5 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
-              <div className="h-full border-t-2 border-accent-500 bg-white/[0.03] p-6 text-center sm:p-8">
+              <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-6 text-center sm:p-8">
+                <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-500 to-[#773CDD]" />
                 <p className="font-display text-4xl font-bold text-white sm:text-5xl">
                   <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </p>

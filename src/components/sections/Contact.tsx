@@ -109,12 +109,12 @@ export function Contact() {
       <Container className="relative">
         <SectionHeading
           eyebrow="Get started"
-          title="Let's build something"
+          title="Let's Build Something Real."
           description="Get a free technical audit of your product worth $2,000 — no strings attached."
         />
 
         <Reveal className="mx-auto mt-14 max-w-3xl" delay={0.1}>
-          <div className="overflow-hidden rounded-xl border border-ink-100 bg-white">
+          <div className="overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-xl">
             <div className="grid grid-cols-1 sm:grid-cols-3">
               {trustItems.map((item) => {
                 const Icon = item.icon;
