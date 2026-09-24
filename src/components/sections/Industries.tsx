@@ -8,7 +8,7 @@ export function Industries() {
   const [second, ...compact] = rest;
 
   return (
-    <section id="industries" className="py-24 sm:py-32">
+    <section id="industries" className="py-20 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="Industries we serve"

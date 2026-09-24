@@ -104,7 +104,7 @@ export function Contact() {
     );
 
   return (
-    <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="contact" className="relative overflow-hidden py-20 sm:py-24">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-hero-radial" />
       <Container className="relative">
         <SectionHeading

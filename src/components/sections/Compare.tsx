@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Compare() {
   return (
-    <section className="bg-ink-50/60 py-24 sm:py-32">
+    <section className="bg-ink-50/60 pb-20 sm:pb-24">
       <Container>
         <SectionHeading
           eyebrow="Why teams switch"

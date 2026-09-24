@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-white pb-24 pt-44 sm:pb-32 sm:pt-52">
+    <section id="home" className="relative overflow-hidden bg-white pb-20 pt-44 sm:pb-24 sm:pt-52">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_65%_55%_at_50%_0%,black_10%,transparent_70%)]"

@@ -7,19 +7,12 @@ import { Button } from "@/components/ui/Button";
 
 export function Blog() {
   return (
-    <section id="blog" className="bg-ink-50/60 py-24 sm:py-32">
+    <section id="blog" className="bg-ink-50/60 py-20 sm:py-24">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <SectionHeading
-            eyebrow="From the blog"
-            title="Notes From the Build."
-            align="left"
-            className="mx-0 text-left"
-          />
-          <Button href="#contact" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
-            View all articles
-          </Button>
-        </div>
+        <SectionHeading
+          eyebrow="From the blog"
+          title="Notes From the Build."
+        />
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {blogPosts.map((post, i) => (
@@ -56,6 +49,12 @@ export function Blog() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-12 flex justify-center">
+          <Button href="#contact" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
+            View all articles
+          </Button>
+        </Reveal>
       </Container>
     </section>
   );

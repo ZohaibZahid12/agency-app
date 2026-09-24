@@ -58,7 +58,7 @@ export function Testimonials() {
   const loop = [...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="overflow-hidden py-24 sm:py-32">
+    <section id="testimonials" className="overflow-hidden py-20 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="Client love"

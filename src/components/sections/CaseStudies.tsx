@@ -13,19 +13,12 @@ const accentByIndex = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-24 sm:py-32">
+    <section id="case-studies" className="py-20 sm:py-24">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <SectionHeading
-            eyebrow="Case studies"
-            title="Built. Shipped. Proven."
-            align="left"
-            className="mx-0 text-left"
-          />
-          <Button href="#blog" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
-            View all stories
-          </Button>
-        </div>
+        <SectionHeading
+          eyebrow="Case studies"
+          title="Built. Shipped. Proven."
+        />
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {caseStudies.map((study, i) => (
@@ -64,6 +57,12 @@ export function CaseStudies() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-12 flex justify-center">
+          <Button href="#blog" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
+            View all stories
+          </Button>
+        </Reveal>
       </Container>
     </section>
   );
