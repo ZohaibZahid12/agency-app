@@ -28,7 +28,14 @@ export const siteConfig = {
   tagline: "A product studio for ambitious teams",
   phone: "(555) 012-4488",
   email: "hello@codingcurves.com",
-  address: "228 Park Ave S, New York, NY 10003",
+  address: "238 Condado Cres, Stittsville, ON K2V 0P2",
+  postalAddress: {
+    streetAddress: "238 Condado Cres",
+    addressLocality: "Stittsville",
+    addressRegion: "ON",
+    postalCode: "K2V 0P2",
+    addressCountry: "CA",
+  },
 };
 
 export const navLinks = [

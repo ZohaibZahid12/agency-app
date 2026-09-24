@@ -24,6 +24,7 @@ const jsonLd = {
       url: siteConfig.url,
       logo: `${siteConfig.url}/apple-icon`,
       email: siteConfig.email,
+      address: { "@type": "PostalAddress", ...siteConfig.postalAddress },
       description: siteConfig.description,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
