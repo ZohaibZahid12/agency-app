@@ -22,6 +22,9 @@ import {
 export const siteConfig = {
   name: "CodingCurves",
   shortName: "CodingCurves",
+  url: "https://www.codingcurves.com",
+  description:
+    "CodingCurves designs and builds web, mobile, and AI-powered products for startups and growing teams — product design, engineering, DevOps, and scaling under one roof.",
   tagline: "A product studio for ambitious teams",
   phone: "(555) 012-4488",
   email: "hello@codingcurves.com",

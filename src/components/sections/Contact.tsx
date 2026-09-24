@@ -56,6 +56,8 @@ export function Contact() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState("");
 
   const requiredFields: (keyof FormState)[] = [
     "businessName",
@@ -78,7 +80,7 @@ export function Contact() {
     setErrors((prev) => ({ ...prev, [name]: err ?? undefined }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const nextErrors: Partial<Record<keyof FormState, string>> = {};
     requiredFields.forEach((field) => {
@@ -89,10 +91,25 @@ export function Contact() {
     if (Object.keys(nextErrors).length > 0) return;
 
     setSubmitting(true);
-    window.setTimeout(() => {
-      setSubmitting(false);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, company_url: honeypot }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
       setSubmitted(true);
-    }, 900);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputClasses = (name: keyof FormState) =>
@@ -306,7 +323,26 @@ export function Contact() {
                       />
                     </div>
 
+                    <input
+                      type="text"
+                      name="company_url"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                    />
+
                     <div className="sm:col-span-2">
+                      {submitError && (
+                        <p
+                          role="alert"
+                          className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600"
+                        >
+                          {submitError}
+                        </p>
+                      )}
                       <Button type="submit" size="lg" className="w-full" disabled={submitting}>
                         {submitting ? "Sending..." : "Get my free audit"}
                       </Button>

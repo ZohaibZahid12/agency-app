@@ -44,13 +44,17 @@ export function CaseStudies() {
                   <h3 className="mt-4 text-lg font-bold leading-snug text-ink-950">
                     {study.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-500">{study.summary}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-500">
+                    {study.summary}
+                  </p>
                   <blockquote className="mt-5 border-l-2 border-brand-200 pl-4 text-sm italic leading-relaxed text-ink-600">
                     “{study.quote}”
                   </blockquote>
                   <p className="mt-4 text-sm font-semibold text-ink-900">
                     {study.author}
-                    <span className="block text-xs font-normal text-ink-400">{study.role}</span>
+                    <span className="block text-xs font-normal text-ink-400">
+                      {study.role}
+                    </span>
                   </p>
                 </div>
               </article>
@@ -58,11 +62,11 @@ export function CaseStudies() {
           ))}
         </div>
 
-        <Reveal className="mt-12 flex justify-center">
+        {/* <Reveal className="mt-12 flex justify-center">
           <Button href="#blog" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
             View all stories
           </Button>
-        </Reveal>
+        </Reveal> */}
       </Container>
     </section>
   );

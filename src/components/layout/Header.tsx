@@ -12,6 +12,14 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -21,9 +29,26 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 sm:top-5">
-      <Container>
-        <div className="relative flex h-14 items-center justify-between">
+    <header
+      className={cn(
+        "fixed inset-x-0 z-50 transition-[top] duration-500 ease-out",
+        scrolled ? "top-4 sm:top-5" : "top-0"
+      )}
+    >
+      <div
+        aria-hidden
+        className={cn(
+          "absolute inset-x-0 top-0 h-20 border-b border-ink-100/70 bg-white/80 backdrop-blur-xl transition-all duration-500 ease-out",
+          scrolled && "pointer-events-none -translate-y-full opacity-0"
+        )}
+      />
+      <Container className="relative">
+        <div
+          className={cn(
+            "relative flex items-center justify-between transition-[height] duration-500 ease-out",
+            scrolled ? "h-14" : "h-20"
+          )}
+        >
           <Link href="#home" className="flex shrink-0 items-center gap-2 drop-shadow-sm">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-glow">
               <Spline className="h-4.5 w-4.5" strokeWidth={2.25} />
@@ -36,10 +61,17 @@ export function Header() {
             </span>
           </Link>
 
-          <div className="pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-center lg:flex">
+          <nav
+            aria-label="Primary"
+            className="pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-center lg:flex"
+          >
             <ul
-              className="pointer-events-auto flex items-center gap-1 rounded-full border border-ink-100/70 bg-white/75 px-2 py-1.5 shadow-lg ring-1 ring-ink-950/5 backdrop-blur-xl"
-              aria-label="Primary"
+              className={cn(
+                "pointer-events-auto flex items-center gap-1 rounded-full border px-2 py-1.5 ring-1 transition-all duration-500 ease-out",
+                scrolled
+                  ? "scale-100 border-ink-100/70 bg-white/75 shadow-lg ring-ink-950/5 backdrop-blur-xl"
+                  : "scale-[1.02] border-transparent bg-transparent shadow-none ring-transparent"
+              )}
             >
               {navLinks.map((link) => (
                 <li
@@ -109,7 +141,7 @@ export function Header() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           <div className="flex items-center gap-3">
             <Button href="#contact" size="sm" className="hidden lg:inline-flex">
@@ -118,7 +150,12 @@ export function Header() {
 
             <button
               type="button"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-ink-100/70 bg-white/75 text-ink-800 shadow-lg backdrop-blur-xl lg:hidden"
+              className={cn(
+                "flex h-11 w-11 items-center justify-center rounded-full border text-ink-800 transition-all duration-500 lg:hidden",
+                scrolled
+                  ? "border-ink-100/70 bg-white/75 shadow-lg backdrop-blur-xl"
+                  : "border-transparent bg-transparent shadow-none"
+              )}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
@@ -137,7 +174,7 @@ export function Header() {
               transition={{ duration: 0.2 }}
               className="mt-3 overflow-hidden rounded-3xl border border-ink-100 bg-white shadow-xl lg:hidden"
             >
-              <div className="flex flex-col gap-1 p-4">
+              <nav aria-label="Mobile" className="flex flex-col gap-1 p-4">
                 {navLinks.map((link) => (
                   <div key={link.label}>
                     <a
@@ -173,7 +210,7 @@ export function Header() {
                 <p className="mt-3 border-t border-ink-100 px-3 pt-4 text-xs text-ink-400">
                   {siteConfig.phone} · {siteConfig.email}
                 </p>
-              </div>
+              </nav>
             </motion.div>
           ) : null}
         </AnimatePresence>

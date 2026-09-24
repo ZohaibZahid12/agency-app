@@ -9,10 +9,7 @@ export function Blog() {
   return (
     <section id="blog" className="bg-ink-50/60 py-20 sm:py-24">
       <Container>
-        <SectionHeading
-          eyebrow="From the blog"
-          title="Notes From the Build."
-        />
+        <SectionHeading eyebrow="From the blog" title="Notes From the Build." />
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {blogPosts.map((post, i) => (
@@ -50,11 +47,11 @@ export function Blog() {
           ))}
         </div>
 
-        <Reveal className="mt-12 flex justify-center">
+        {/* <Reveal className="mt-12 flex justify-center">
           <Button href="#contact" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
             View all articles
           </Button>
-        </Reveal>
+        </Reveal> */}
       </Container>
     </section>
   );
