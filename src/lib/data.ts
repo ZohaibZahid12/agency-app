@@ -25,9 +25,9 @@ export const siteConfig = {
   url: "https://www.codingcurves.com",
   description:
     "CodingCurves designs and builds web, mobile, and AI-powered products for startups and growing teams — product design, engineering, DevOps, and scaling under one roof.",
-  tagline: "A product studio for ambitious teams",
-  phone: "(555) 012-4488",
-  email: "hello@codingcurves.com",
+  tagline: "From Idea to Impact",
+  phone: "+1-365-499-2228",
+  email: "teamcodingcurves@gmail.com",
   address: "238 Condado Cres, Stittsville, ON K2V 0P2",
   postalAddress: {
     streetAddress: "238 Condado Cres",
