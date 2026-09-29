@@ -1,7 +1,11 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
+
+const markBase64 = readFileSync(join(process.cwd(), "public/logo-mark.png")).toString("base64");
 
 export default function AppleIcon() {
   return new ImageResponse(
@@ -13,23 +17,16 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #7c81f8 0%, #372ba1 100%)",
+          background: "#ffffff",
         }}
       >
-        <svg
-          width="112"
-          height="112"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="2.25"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="19" cy="5" r="2" fill="#ffffff" />
-          <circle cx="5" cy="19" r="2" fill="#ffffff" />
-          <path d="M5 17A12 12 0 0 1 17 5" />
-        </svg>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`data:image/png;base64,${markBase64}`}
+          width={124}
+          height={128}
+          alt="CodingCurves"
+        />
       </div>
     ),
     size

@@ -1,7 +1,11 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
+
+const markBase64 = readFileSync(join(process.cwd(), "public/logo-mark.png")).toString("base64");
 
 export default function Icon() {
   return new ImageResponse(
@@ -13,24 +17,15 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderRadius: 8,
-          background: "linear-gradient(135deg, #7c81f8 0%, #372ba1 100%)",
         }}
       >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="19" cy="5" r="2" fill="#ffffff" />
-          <circle cx="5" cy="19" r="2" fill="#ffffff" />
-          <path d="M5 17A12 12 0 0 1 17 5" />
-        </svg>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`data:image/png;base64,${markBase64}`}
+          width={30}
+          height={31}
+          alt="CodingCurves"
+        />
       </div>
     ),
     size
