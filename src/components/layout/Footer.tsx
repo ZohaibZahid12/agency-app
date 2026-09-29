@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, Spline } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { footerLinks, siteConfig } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -23,16 +24,14 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/#home" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-glow">
-                <Spline className="h-4.5 w-4.5" strokeWidth={2.25} />
-              </span>
-              <span className="font-display text-[1.05rem] font-bold leading-none tracking-tight text-ink-950">
-                Coding
-                <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand-600">
-                  Curves
-                </span>
-              </span>
+            <Link href="/#home" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="CodingCurves"
+                width={672}
+                height={198}
+                className="h-9 w-auto"
+              />
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink-500">
               {siteConfig.tagline}. We partner with founders and product teams

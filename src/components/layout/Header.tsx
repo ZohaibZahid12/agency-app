@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, X, Spline } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -49,16 +50,23 @@ export function Header() {
             scrolled ? "h-14" : "h-20"
           )}
         >
-          <Link href="/#home" className="flex shrink-0 items-center gap-2 drop-shadow-sm">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-glow">
-              <Spline className="h-4.5 w-4.5" strokeWidth={2.25} />
-            </span>
-            <span className="font-display text-[1.05rem] font-bold leading-none tracking-tight text-ink-950">
-              Coding
-              <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand-600">
-                Curves
-              </span>
-            </span>
+          <Link
+            href="/#home"
+            className={cn(
+              "flex shrink-0 items-center rounded-full px-2.5 py-1.5 transition-all duration-500 ease-out",
+              scrolled
+                ? "bg-white/80 shadow-lg ring-1 ring-ink-950/5 backdrop-blur-xl"
+                : "bg-transparent shadow-none ring-0"
+            )}
+          >
+            <Image
+              src="/logo.png"
+              alt="CodingCurves"
+              width={672}
+              height={198}
+              priority
+              className="h-8 w-auto sm:h-9"
+            />
           </Link>
 
           <nav
