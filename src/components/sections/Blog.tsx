@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Calendar, Clock } from "lucide-react";
 import { blogPosts } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
@@ -6,15 +7,20 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 
 export function Blog() {
+  const featured = blogPosts.slice(0, 3);
+
   return (
     <section id="blog" className="bg-ink-50/60 py-20 sm:py-24">
       <Container>
         <SectionHeading eyebrow="From the blog" title="Notes From the Build." />
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {blogPosts.map((post, i) => (
-            <Reveal key={post.title} delay={i * 0.1}>
-              <article className="group flex h-full cursor-pointer flex-col rounded-3xl border border-ink-100 bg-white p-1.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+          {featured.map((post, i) => (
+            <Reveal key={post.slug} delay={i * 0.1}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group flex h-full flex-col rounded-3xl border border-ink-100 bg-white p-1.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
                 <div className="relative flex h-36 items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-brand-50 to-white">
                   <span className="text-5xl font-black text-ink-200 font-display">
                     {String(i + 1).padStart(2, "0")}
@@ -42,16 +48,16 @@ export function Blog() {
                     </span>
                   </div>
                 </div>
-              </article>
+              </Link>
             </Reveal>
           ))}
         </div>
 
-        {/* <Reveal className="mt-12 flex justify-center">
-          <Button href="#contact" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
+        <Reveal className="mt-12 flex justify-center">
+          <Button href="/blog" variant="outline" icon={<ArrowRight className="h-4 w-4" />}>
             View all articles
           </Button>
-        </Reveal> */}
+        </Reveal>
       </Container>
     </section>
   );

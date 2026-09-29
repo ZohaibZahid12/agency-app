@@ -18,6 +18,7 @@ import {
   UserPlus,
   type LucideIcon,
 } from "lucide-react";
+import { blogPostDetails } from "@/lib/blog-posts";
 
 export const siteConfig = {
   name: "CodingCurves",
@@ -39,21 +40,21 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/#home" },
   {
     label: "Services",
-    href: "#services",
+    href: "/#services",
     dropdown: [
-      { label: "Web & Mobile Development", href: "#services", description: "Native, cross-platform, and web" },
-      { label: "Product Design & Branding", href: "#services", description: "Identity, UX, and interface design" },
-      { label: "AI & Data Pipelines", href: "#services", description: "Automation wired into real systems" },
-      { label: "Product Building", href: "#services", description: "Zero to shipped v1" },
-      { label: "DevOps & Infrastructure", href: "#services", description: "CI/CD, cloud, and observability" },
-      { label: "Product Scaling", href: "#services", description: "Architecture for 10x growth" },
+      { label: "Web & Mobile Development", href: "/#services", description: "Native, cross-platform, and web" },
+      { label: "Product Design & Branding", href: "/#services", description: "Identity, UX, and interface design" },
+      { label: "AI & Data Pipelines", href: "/#services", description: "Automation wired into real systems" },
+      { label: "Product Building", href: "/#services", description: "Zero to shipped v1" },
+      { label: "DevOps & Infrastructure", href: "/#services", description: "CI/CD, cloud, and observability" },
+      { label: "Product Scaling", href: "/#services", description: "Architecture for 10x growth" },
     ],
   },
-  { label: "About", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export type Service = {
@@ -261,6 +262,7 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 export type BlogPost = {
+  slug: string;
   category: string;
   title: string;
   excerpt: string;
@@ -268,29 +270,16 @@ export type BlogPost = {
   readTime: string;
 };
 
-export const blogPosts: BlogPost[] = [
-  {
-    category: "AI",
-    title: "Where AI Actually Belongs in Your Product (and Where It Doesn't)",
-    excerpt: "A practical framework for deciding which parts of your workflow are worth automating with AI — and which aren't.",
-    date: "Aug 12, 2026",
-    readTime: "6 min read",
-  },
-  {
-    category: "DevOps",
-    title: "The Real Cost of Skipping CI/CD Until It's Too Late",
-    excerpt: "What we've seen break in production, and the infrastructure investments that would have prevented it.",
-    date: "Jul 28, 2026",
-    readTime: "5 min read",
-  },
-  {
-    category: "Product",
-    title: "Shipping v1 Without Building the Wrong Thing",
-    excerpt: "How we scope a first version that's fast to build and still worth using.",
-    date: "Jul 09, 2026",
-    readTime: "7 min read",
-  },
-];
+export const blogPosts: BlogPost[] = [...blogPostDetails]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .map(({ slug, category, title, excerpt, date, readTime }) => ({
+    slug,
+    category,
+    title,
+    excerpt,
+    date,
+    readTime,
+  }));
 
 export type Testimonial = {
   name: string;
@@ -344,23 +333,23 @@ export const serviceIndustryOptions = [
 
 export const footerLinks = {
   company: [
-    { label: "About us", href: "#process" },
+    { label: "About us", href: "/#process" },
     { label: "Careers", href: "#" },
-    { label: "Contact us", href: "#contact" },
-    { label: "Blog", href: "#blog" },
+    { label: "Contact us", href: "/#contact" },
+    { label: "Blog", href: "/blog" },
   ],
   services: [
-    { label: "Web & Mobile Development", href: "#services" },
-    { label: "Product Design & Branding", href: "#services" },
-    { label: "AI & Data Pipelines", href: "#services" },
-    { label: "DevOps & Infrastructure", href: "#services" },
-    { label: "Product Scaling", href: "#services" },
+    { label: "Web & Mobile Development", href: "/#services" },
+    { label: "Product Design & Branding", href: "/#services" },
+    { label: "AI & Data Pipelines", href: "/#services" },
+    { label: "DevOps & Infrastructure", href: "/#services" },
+    { label: "Product Scaling", href: "/#services" },
   ],
   additional: [
-    { label: "Startups & Scaleups", href: "#industries" },
-    { label: "Fintech", href: "#industries" },
-    { label: "Healthcare", href: "#industries" },
-    { label: "E-commerce & Retail", href: "#industries" },
-    { label: "Enterprise SaaS", href: "#industries" },
+    { label: "Startups & Scaleups", href: "/#industries" },
+    { label: "Fintech", href: "/#industries" },
+    { label: "Healthcare", href: "/#industries" },
+    { label: "E-commerce & Retail", href: "/#industries" },
+    { label: "Enterprise SaaS", href: "/#industries" },
   ],
 };

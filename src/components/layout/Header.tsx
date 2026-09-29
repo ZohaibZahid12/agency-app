@@ -49,7 +49,7 @@ export function Header() {
             scrolled ? "h-14" : "h-20"
           )}
         >
-          <Link href="#home" className="flex shrink-0 items-center gap-2 drop-shadow-sm">
+          <Link href="/#home" className="flex shrink-0 items-center gap-2 drop-shadow-sm">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-glow">
               <Spline className="h-4.5 w-4.5" strokeWidth={2.25} />
             </span>
@@ -123,7 +123,7 @@ export function Header() {
                               ))}
                             </div>
                             <a
-                              href="#contact"
+                              href="/#contact"
                               className="flex items-center justify-between border-t border-ink-100 bg-ink-50/60 px-5 py-3.5 transition-colors hover:bg-brand-50"
                             >
                               <span className="text-sm font-semibold text-ink-900">
@@ -144,7 +144,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button href="#contact" size="sm" className="hidden lg:inline-flex">
+            <Button href="/#contact" size="sm" className="hidden lg:inline-flex">
               Start a Project
             </Button>
 
@@ -201,7 +201,7 @@ export function Header() {
                   </div>
                 ))}
                 <Button
-                  href="#contact"
+                  href="/#contact"
                   className="mt-3"
                   onClick={() => setMobileOpen(false)}
                 >
