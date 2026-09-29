@@ -1,10 +1,5 @@
 import {
-  Smartphone,
-  PenTool,
-  BrainCircuit,
   Rocket,
-  Server,
-  TrendingUp,
   Landmark,
   Stethoscope,
   ShoppingCart,
@@ -19,6 +14,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { blogPostDetails } from "@/lib/blog-posts";
+import { serviceDetails } from "@/lib/service-pages";
 
 export const siteConfig = {
   name: "CodingCurves",
@@ -45,56 +41,36 @@ export const navLinks = [
     label: "Services",
     href: "/#services",
     dropdown: [
-      { label: "Web & Mobile Development", href: "/#services", description: "Native, cross-platform, and web" },
-      { label: "Product Design & Branding", href: "/#services", description: "Identity, UX, and interface design" },
-      { label: "AI & Data Pipelines", href: "/#services", description: "Automation wired into real systems" },
-      { label: "Product Building", href: "/#services", description: "Zero to shipped v1" },
-      { label: "DevOps & Infrastructure", href: "/#services", description: "CI/CD, cloud, and observability" },
-      { label: "Product Scaling", href: "/#services", description: "Architecture for 10x growth" },
+      { label: "Web Development", href: "/services/web-development", description: "React, Next.js, and full-stack builds" },
+      { label: "Mobile App Development", href: "/services/mobile-app-development", description: "Native, cross-platform, and web" },
+      { label: "AI Development", href: "/services/ai-development", description: "Automation wired into real systems" },
+      { label: "MVP Development", href: "/services/mvp-development", description: "Zero to shipped v1" },
+      { label: "SaaS Development", href: "/services/saas-development", description: "Multi-tenant products that scale" },
+      { label: "DevOps & Cloud Infrastructure", href: "/services/devops-cloud", description: "CI/CD, cloud, and observability" },
+      { label: "Product Design & UX", href: "/services/product-design", description: "Identity, UX, and interface design" },
+      { label: "Software Scaling", href: "/services/software-scaling", description: "Architecture for 10x growth" },
     ],
   },
   { label: "About", href: "/#process" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
 
 export type Service = {
+  slug: string;
   title: string;
   description: string;
   icon: LucideIcon;
+  gradient: string;
 };
 
-export const services: Service[] = [
-  {
-    title: "Web & Mobile Development",
-    description: "Native iOS and Android apps, plus fast, modern web platforms — built to launch and built to last.",
-    icon: Smartphone,
-  },
-  {
-    title: "Product Design & Branding",
-    description: "Brand identity, UX research, and interface design that make your product obvious to use.",
-    icon: PenTool,
-  },
-  {
-    title: "AI & Data Pipelines",
-    description: "Automation and AI wired into your existing systems — real data pipelines, not a bolted-on chatbot.",
-    icon: BrainCircuit,
-  },
-  {
-    title: "Product Building",
-    description: "From a blank canvas to a working v1 — we take a product from idea to shipped, end to end.",
-    icon: Rocket,
-  },
-  {
-    title: "DevOps & Infrastructure",
-    description: "CI/CD, cloud infrastructure, and observability so your team ships faster without breaking prod.",
-    icon: Server,
-  },
-  {
-    title: "Product Scaling",
-    description: "Performance and architecture work that lets your product handle 10x the load — and the team.",
-    icon: TrendingUp,
-  },
-];
+export const services: Service[] = serviceDetails.map((s) => ({
+  slug: s.slug,
+  title: s.navTitle,
+  description: s.excerpt,
+  icon: s.icon,
+  gradient: s.gradient,
+}));
 
 export const stats: { value: number; prefix?: string; suffix?: string; label: string }[] = [
   { value: 60, suffix: "+", label: "Products shipped to production" },
@@ -339,11 +315,13 @@ export const footerLinks = {
     { label: "Blog", href: "/blog" },
   ],
   services: [
-    { label: "Web & Mobile Development", href: "/#services" },
-    { label: "Product Design & Branding", href: "/#services" },
-    { label: "AI & Data Pipelines", href: "/#services" },
-    { label: "DevOps & Infrastructure", href: "/#services" },
-    { label: "Product Scaling", href: "/#services" },
+    { label: "Web Development", href: "/services/web-development" },
+    { label: "Mobile App Development", href: "/services/mobile-app-development" },
+    { label: "AI Development", href: "/services/ai-development" },
+    { label: "SaaS Development", href: "/services/saas-development" },
+    { label: "DevOps & Cloud Infrastructure", href: "/services/devops-cloud" },
+    { label: "Product Design & UX", href: "/services/product-design" },
+    { label: "Software Scaling", href: "/services/software-scaling" },
   ],
   additional: [
     { label: "Startups & Scaleups", href: "/#industries" },
