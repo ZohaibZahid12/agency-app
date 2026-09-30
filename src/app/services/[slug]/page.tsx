@@ -160,7 +160,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               All services
             </Link>
 
-            <ServiceHero icon={service.icon} gradient={service.gradient} className="mt-6" />
+            <ServiceHero
+              icon={service.icon}
+              gradient={service.gradient}
+              slug={service.slug}
+              className="mt-6"
+            />
 
             <h1 className="mt-8 text-display-md font-bold leading-tight text-ink-950 text-balance">
               {service.title}
