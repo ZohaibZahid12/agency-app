@@ -20,7 +20,7 @@ export function Engagement() {
             return (
               <Reveal key={model.title} delay={i * 0.1}>
                 <div className="flex h-full flex-col rounded-3xl border border-ink-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-xl">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-soft">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-[#00C2E8] text-white shadow-soft">
                     <Icon className="h-5 w-5" strokeWidth={1.75} />
                   </span>
                   <h3 className="mt-6 text-lg font-bold text-ink-950">{model.title}</h3>

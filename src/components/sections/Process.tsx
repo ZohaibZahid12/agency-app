@@ -29,7 +29,7 @@ export function Process() {
                         className="h-6 w-6 text-brand-600"
                         strokeWidth={1.75}
                       />
-                      <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-[#773CDD] text-[0.65rem] font-bold text-white">
+                      <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-[#00C2E8] text-[0.65rem] font-bold text-white">
                         {step.number}
                       </span>
                     </div>

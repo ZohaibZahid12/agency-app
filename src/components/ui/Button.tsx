@@ -11,7 +11,7 @@ type Size = "sm" | "md" | "lg";
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-br from-brand-500 via-brand-600 to-[#773CDD] text-white shadow-soft hover:brightness-110 hover:shadow-glow active:brightness-95",
+    "bg-gradient-to-br from-brand-500 via-brand-600 to-[#00C2E8] text-white shadow-soft hover:brightness-110 hover:shadow-glow active:brightness-95",
   secondary: "bg-ink-950 text-white hover:bg-ink-800 shadow-soft",
   outline:
     "border border-ink-200 text-ink-800 bg-white hover:border-brand-300 hover:bg-brand-50/60",

@@ -21,7 +21,7 @@ export function Stats() {
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
               <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-6 text-center sm:p-8">
-                <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-500 to-[#773CDD]" />
+                <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-500 to-[#00C2E8]" />
                 <p className="font-display text-4xl font-bold text-white sm:text-5xl">
                   <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </p>

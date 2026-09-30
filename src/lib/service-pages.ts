@@ -163,7 +163,7 @@ export const serviceDetails: ServiceDetail[] = [
       "CodingCurves develops scalable iOS and Android apps for startups and product teams, from product design and API integration to launch and post-launch support.",
     keyword: "mobile app development company",
     icon: Smartphone,
-    gradient: "from-brand-500 to-[#773CDD]",
+    gradient: "from-brand-500 to-[#00C2E8]",
     content: [
       {
         type: "p",
@@ -258,7 +258,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Build practical AI products and automation with CodingCurves. We integrate AI into applications, workflows, data pipelines, and production systems.",
     keyword: "AI development company",
     icon: BrainCircuit,
-    gradient: "from-[#773CDD] to-brand-900",
+    gradient: "from-[#00C2E8] to-brand-900",
     content: [
       {
         type: "p",
@@ -638,7 +638,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Design better digital products with CodingCurves. UX research, product strategy, UI design, design systems, and engineering-ready product experiences.",
     keyword: "product design agency",
     icon: PenTool,
-    gradient: "from-accent-500 to-[#773CDD]",
+    gradient: "from-accent-500 to-[#00C2E8]",
     content: [
       {
         type: "p",

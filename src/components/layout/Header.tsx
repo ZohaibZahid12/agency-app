@@ -137,7 +137,7 @@ export function Header() {
                               <span className="text-sm font-semibold text-ink-900">
                                 Not sure where to start?
                               </span>
-                              <span className="bg-gradient-to-r from-brand-600 to-[#773CDD] bg-clip-text text-sm font-semibold text-transparent">
+                              <span className="bg-gradient-to-r from-brand-600 to-[#00C2E8] bg-clip-text text-sm font-semibold text-transparent">
                                 Get a free audit →
                               </span>
                             </a>

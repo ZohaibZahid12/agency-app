@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 const accentByIndex = [
   "from-brand-500 to-brand-700",
-  "from-brand-500 to-[#773CDD]",
+  "from-brand-500 to-[#00C2E8]",
   "from-growth-500 to-growth-700",
 ];
 
